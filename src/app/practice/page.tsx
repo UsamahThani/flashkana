@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import Flashcard from '../components/Flashcard'
-import { p } from "framer-motion/client"
 
 type Card = { char: string; romaji: string  }
 
