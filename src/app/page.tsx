@@ -1,3 +1,8 @@
+export const metadata = {
+	title: "FlashKana - Home",
+	description: "Practice Hiragana and Katakana with FlashKana!",
+};
+
 import Link from "next/link";
 
 export default function Home() {

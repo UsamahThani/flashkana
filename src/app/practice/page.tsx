@@ -1,4 +1,7 @@
-"use client";
+export const metadata = {
+	title: "Practice Flashcards | FlashKana",
+	description: "Test your Hiragana or Katakana knowledge!",
+};
 
 import { Suspense } from "react";
 import FlashcardWrapper from "./FlashcardWrapper";
