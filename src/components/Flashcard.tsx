@@ -135,14 +135,16 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 
 							{/* Back - Romaji */}
 							<div
-								className="absolute w-full h-full flex items-center justify-center text-5xl text-black p-4 backface-hidden"
+								className="absolute w-full h-full flex flex-col items-center justify-center text-5xl text-black p-4 backface-hidden"
 								style={{
 									backfaceVisibility: "hidden",
 									transform: "rotateX(180deg)",
 									position: "absolute",
 								}}
 							>
-								{card.romaji}
+								{card.romaji.split("\n").map((line, idx) => (
+									<div key={idx}>{line}</div>
+								))}
 							</div>
 						</motion.div>
 					</motion.div>
