@@ -23,6 +23,12 @@ export default function Home() {
 				>
 					Katakana
 				</Link>
+				<Link
+					href="/practice?type=hiragana_practice"
+					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+				>
+					Word Practice (Hiragana)
+				</Link>
 			</div>
 		</main>
 	);
