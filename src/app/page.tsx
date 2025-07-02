@@ -1,14 +1,25 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export const metadata = {
 	title: "FlashKana - Home",
 	description: "Practice Hiragana and Katakana with FlashKana!",
+	icons: {
+		icon: "/images/icon_cut.png",
+	},
 };
-
-import Link from "next/link";
 
 export default function Home() {
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-center text-center">
-			<h1 className="text-3xl font-bold mb-4">FlashKana</h1>
+			<Image
+				src="/images/icon.png"
+				alt="FlashKana Icon"
+				width={200}
+				height={200}
+				className="mb-3"
+			/>
+
 			<p className="mb-6">Choose what you wanna practice:</p>
 			<div className="flex flex-col gap-4">
 				<Link
