@@ -91,8 +91,6 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 
 	const card = shuffleCards[index] ?? null;
 
-	if (!card) return null;
-
 	// checking if the type is kanji practice and have some additional features
 	useEffect(() => {
 		if (isKanjiPractice && showWriting && card?.char) {
@@ -128,6 +126,8 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 			setKanjiVideo(null);
 		}
 	}, [card?.char, showWriting, isKanjiPractice]);
+
+	if (!card) return null;
 
 	return (
 		<div
