@@ -19,6 +19,7 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 	const [shuffleCards, setShuffleCards] = useState<Card[]>(cards);
 	const [finished, setFinished] = useState(false);
 	const [direction, setDirection] = useState(0);
+	const card = shuffleCards[index] ?? null;
 
 	const searchParams = useSearchParams();
 	const type = searchParams.get("type");
@@ -72,25 +73,6 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 		trackMouse: true,
 	});
 
-	if (finished) {
-		return (
-			<div className="w-full h-screen flex flex-col items-center justify-center text-center">
-				<h2 className="text-3xl font-bold mb-4">You have finished!</h2>
-				<button
-					onClick={() => {
-						setFinished(false);
-						setIndex(0);
-					}}
-					className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
-				>
-					Restart
-				</button>
-			</div>
-		);
-	}
-
-	const card = shuffleCards[index] ?? null;
-
 	// checking if the type is kanji practice and have some additional features
 	useEffect(() => {
 		if (isKanjiPractice && showWriting && card?.char) {
@@ -126,6 +108,23 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 			setKanjiVideo(null);
 		}
 	}, [card?.char, showWriting, isKanjiPractice]);
+
+	if (finished) {
+		return (
+			<div className="w-full h-screen flex flex-col items-center justify-center text-center">
+				<h2 className="text-3xl font-bold mb-4">You have finished!</h2>
+				<button
+					onClick={() => {
+						setFinished(false);
+						setIndex(0);
+					}}
+					className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
+				>
+					Restart
+				</button>
+			</div>
+		);
+	}
 
 	if (!card) return null;
 
