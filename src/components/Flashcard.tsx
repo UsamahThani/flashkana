@@ -3,6 +3,7 @@
 import { useSwipeable } from "react-swipeable";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import confetti from "canvas-confetti";
 
 type Card = { char: string; romaji: string };
@@ -18,6 +19,15 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 	const [shuffleCards, setShuffleCards] = useState<Card[]>(cards);
 	const [finished, setFinished] = useState(false);
 	const [direction, setDirection] = useState(0);
+
+	const searchParams = useSearchParams();
+	const type = searchParams.get("type");
+	const isKanjiPractice = type?.startsWith("kanji");
+
+	const [showWriting, setShowWriting] = useState(false);
+	const [kanjiVideo, setKanjiVideo] = useState<string | null>(null);
+
+	const [showReplay, setShowReplay] = useState(false);
 
 	useEffect(() => {
 		const newOrder = isRandom ? shuffleArray(cards) : cards;
@@ -83,6 +93,42 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 
 	if (!card) return null;
 
+	// checking if the type is kanji practice and have some additional features
+	useEffect(() => {
+		if (isKanjiPractice && showWriting && card?.char) {
+			const fetchVideo = async () => {
+				try {
+					const response = await fetch(
+						`https://kanjialive-api.p.rapidapi.com/api/public/kanji/${encodeURIComponent(
+							card.char
+						)}`,
+						{
+							method: "GET",
+							headers: {
+								"X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPIDAPI_KEY || "",
+								"X-RapidAPI-Host": "kanjialive-api.p.rapidapi.com",
+							},
+						}
+					);
+
+					if (!response.ok) {
+						throw new Error("Response kanji writing not ok");
+					}
+					const data = await response.json();
+					const videoUrl = data.kanji?.video.mp4;
+					console.log("Fetched Kanji video URL:", videoUrl);
+					setKanjiVideo(videoUrl || null);
+				} catch (err) {
+					console.error("Failed to fetch Kanji video:", err);
+					setKanjiVideo(null);
+				}
+			};
+			fetchVideo();
+		} else {
+			setKanjiVideo(null);
+		}
+	}, [card?.char, showWriting, isKanjiPractice]);
+
 	return (
 		<div
 			{...handlers}
@@ -102,6 +148,21 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 				<span className="text-sm ml-5">Random</span>
 			</div>
 
+			{isKanjiPractice && (
+				<div className="w-full flex justify-start items-center mb-4">
+					<label className="relative inline-block h-7 w-[48px] cursor-pointer rounded-full bg-gray-900 transition has-[:checked]:bg-[#1976D2]">
+						<input
+							type="checkbox"
+							checked={showWriting}
+							onChange={(e) => setShowWriting(e.target.checked)}
+							className="peer sr-only"
+						/>
+						<span className="absolute inset-y-0 start-0 m-1 size-5 rounded-full bg-gray-300 ring-[5px] ring-inset ring-white transition-all peer-checked:start-7 bg-gray-900 peer-checked:w-2 peer-checked:bg-white peer-checked:ring-transparent"></span>
+					</label>
+					<span className="text-sm ml-5">Show Writing</span>
+				</div>
+			)}
+
 			{/* Flashcard */}
 			<div className="w-full flex items-center justify-center h-3/4">
 				<AnimatePresence mode="wait" initial={false}>
@@ -113,40 +174,88 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 						transition={{ duration: 0.3 }}
 					>
 						{/* Flip Card Inside */}
-						<motion.div
-							className="relative w-60 h-80 bg-white rounded-2xl shadow-xl"
-							animate={{ rotateX: showAnswer ? 180 : 0 }}
-							transition={{ duration: 0.6, ease: "easeInOut" }}
+						<div
+							className="relative w-60 h-80 rounded-2xl shadow-xl"
 							style={{
-								transformStyle: "preserve-3d",
 								perspective: 1000,
 							}}
 						>
-							{/* Front - Kana */}
-							<div
-								className="absolute w-full h-full flex items-center justify-center text-5xl text-black p-4 backface-hidden"
+							<motion.div
+								className="relative w-full h-full bg-white rounded-2xl"
+								animate={{ rotateX: showAnswer ? 180 : 0 }}
+								transition={{ duration: 0.6, ease: "easeInOut" }}
 								style={{
-									backfaceVisibility: "hidden",
-									position: "absolute",
+									transformStyle: "preserve-3d",
 								}}
 							>
-								{card.char}
-							</div>
+								{/* Front */}
+								<div
+									className="absolute inset-0 flex items-center justify-center text-5xl text-black bg-white rounded-2xl"
+									style={{
+										backfaceVisibility: "hidden",
+									}}
+								>
+									{isKanjiPractice && showWriting && kanjiVideo ? (
+										<div className="relative w-full h-full flex items-center justify-center">
+											<video
+												key={kanjiVideo} // ensures reload when video changes
+												src={kanjiVideo}
+												autoPlay
+												muted
+												playsInline
+												onEnded={() => setShowReplay(true)}
+												ref={(el) => {
+													if (el) el.onplay = () => setShowReplay(false);
+												}}
+												className="w-full h-full object-contain rounded-2xl"
+											/>
 
-							{/* Back - Romaji */}
-							<div
-								className="absolute w-full h-full flex flex-col items-center justify-center text-5xl text-black p-4 backface-hidden"
-								style={{
-									backfaceVisibility: "hidden",
-									transform: "rotateX(180deg)",
-									position: "absolute",
-								}}
-							>
-								{card.romaji.split("\n").map((line, idx) => (
-									<div key={idx}>{line}</div>
-								))}
-							</div>
-						</motion.div>
+											{/* Replay Button */}
+											{showReplay && (
+												<button
+													onClick={() => {
+														const video = document.querySelector("video");
+														if (video) {
+															video.currentTime = 0;
+															video.play();
+															setShowReplay(false);
+														}
+													}}
+													className="absolute bottom-4 bg-black/60 text-white px-4 py-2 rounded-full text-sm hover:bg-black/80 transition"
+												>
+													↻ Replay
+												</button>
+											)}
+										</div>
+									) : (
+										card.char
+									)}
+								</div>
+
+								{/* Back */}
+								<div
+									className="absolute inset-0 flex flex-col items-center justify-center text-5xl text-black bg-white rounded-2xl"
+									style={{
+										backfaceVisibility: "hidden",
+										transform: "rotateX(180deg)",
+									}}
+								>
+									{card.romaji.split("\n").map((line, idx) => (
+										<div key={idx}>{line}</div>
+									))}
+
+									{isKanjiPractice && (
+										<a
+											href={`https://app.kanjialive.com/${card.char}`}
+											target="_blank"
+											className="absolute bottom-0 end-2 text-xs text-gray-500"
+										>
+											Learn more
+										</a>
+									)}
+								</div>
+							</motion.div>
+						</div>
 					</motion.div>
 				</AnimatePresence>
 			</div>

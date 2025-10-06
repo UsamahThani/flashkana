@@ -100,7 +100,7 @@ flashkana/
 
 ## 🙋‍♂️ Author
 
-Made with ❤️ by [Usamah](https://github.com/UsamahThani)
+Made by [Usamah](https://github.com/UsamahThani)
 
 ---
 

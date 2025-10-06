@@ -142,5 +142,327 @@
 		{ "char": "わたし", "romaji": "watashi\nI, me" },
 		{ "char": "をんがく", "romaji": "wongaku\nmusic" },
 		{ "char": "ほん", "romaji": "hon\nbook" }
+	],
+	"kanji_n5": [
+		{
+			"char": "人",
+			"romaji": "hito\nperson"
+		},
+		{
+			"char": "大",
+			"romaji": "ō\nlarge"
+		},
+		{
+			"char": "一",
+			"romaji": "ichi\none"
+		},
+		{
+			"char": "分",
+			"romaji": "bun\npart"
+		},
+		{
+			"char": "見",
+			"romaji": "mi\nsee"
+		},
+		{
+			"char": "出",
+			"romaji": "de\nexit"
+		},
+		{
+			"char": "日",
+			"romaji": "hi\nday"
+		},
+		{
+			"char": "行",
+			"romaji": "iku\ngoing"
+		},
+		{
+			"char": "前",
+			"romaji": "mae\nin front"
+		},
+		{
+			"char": "時",
+			"romaji": "toki\ntime"
+		},
+		{
+			"char": "生",
+			"romaji": "sei\nlife"
+		},
+		{
+			"char": "本",
+			"romaji": "hon\nbook"
+		},
+		{
+			"char": "中",
+			"romaji": "naka\nin"
+		},
+		{
+			"char": "今",
+			"romaji": "ima\nnow"
+		},
+		{
+			"char": "間",
+			"romaji": "aida\ninterval"
+		},
+		{
+			"char": "年",
+			"romaji": "toshi\nyear"
+		},
+		{
+			"char": "子",
+			"romaji": "ko\nchild"
+		},
+		{
+			"char": "長",
+			"romaji": "nagai\nlong"
+		},
+		{
+			"char": "上",
+			"romaji": "ue\nabove"
+		},
+		{
+			"char": "入",
+			"romaji": "iru\nenter"
+		},
+		{
+			"char": "後",
+			"romaji": "ato\nbehind"
+		},
+		{
+			"char": "気",
+			"romaji": "ki\nspirit"
+		},
+		{
+			"char": "来",
+			"romaji": "kuru\ncome"
+		},
+		{
+			"char": "話",
+			"romaji": "hanashi\ntale"
+		},
+		{
+			"char": "女",
+			"romaji": "onna\nwoman"
+		},
+		{
+			"char": "国",
+			"romaji": "kuni\ncountry"
+		},
+		{
+			"char": "金",
+			"romaji": "kin\ngold"
+		},
+		{
+			"char": "高",
+			"romaji": "takai\ntall"
+		},
+		{
+			"char": "下",
+			"romaji": "shita\nbelow"
+		},
+		{
+			"char": "学",
+			"romaji": "gaku\nstudy"
+		},
+		{
+			"char": "先",
+			"romaji": "saki\nbefore"
+		},
+		{
+			"char": "外",
+			"romaji": "soto\noutside"
+		},
+		{
+			"char": "何",
+			"romaji": "nani\nwhat"
+		},
+		{
+			"char": "男",
+			"romaji": "otoko\nmale"
+		},
+		{
+			"char": "名",
+			"romaji": "namae\nname"
+		},
+		{
+			"char": "月",
+			"romaji": "tsuki\nmonth"
+		},
+		{
+			"char": "小",
+			"romaji": "chiisai\nlittle"
+		},
+		{
+			"char": "聞",
+			"romaji": "kiku\nhear"
+		},
+		{
+			"char": "食",
+			"romaji": "taberu\neat"
+		},
+		{
+			"char": "書",
+			"romaji": "kaku\nwrite"
+		},
+		{
+			"char": "山",
+			"romaji": "yama\nmountain"
+		},
+		{
+			"char": "電",
+			"romaji": "den\nelectricity"
+		},
+		{
+			"char": "二",
+			"romaji": "ni\ntwo"
+		},
+		{
+			"char": "車",
+			"romaji": "kuruma\ncar"
+		},
+		{
+			"char": "水",
+			"romaji": "mizu\nwater"
+		},
+		{
+			"char": "木",
+			"romaji": "ki\ntree"
+		},
+		{
+			"char": "母",
+			"romaji": "haha\nmother"
+		},
+		{
+			"char": "校",
+			"romaji": "kō\nexam"
+		},
+		{
+			"char": "父",
+			"romaji": "chichi\nfather"
+		},
+		{
+			"char": "白",
+			"romaji": "shiro\nwhite"
+		},
+		{
+			"char": "語",
+			"romaji": "go\nword"
+		},
+		{
+			"char": "十",
+			"romaji": "jū\nten"
+		},
+		{
+			"char": "万",
+			"romaji": "man\nten thousand"
+		},
+		{
+			"char": "友",
+			"romaji": "tomo\nfriend"
+		},
+		{
+			"char": "川",
+			"romaji": "kawa\nstream"
+		},
+		{
+			"char": "三",
+			"romaji": "san\nthree"
+		},
+		{
+			"char": "天",
+			"romaji": "ten\nheavens"
+		},
+		{
+			"char": "東",
+			"romaji": "higashi\neast"
+		},
+		{
+			"char": "半",
+			"romaji": "han\nhalf"
+		},
+		{
+			"char": "北",
+			"romaji": "kita\nnorth"
+		},
+		{
+			"char": "火",
+			"romaji": "hi\nfire"
+		},
+		{
+			"char": "土",
+			"romaji": "tsuchi\nsoil"
+		},
+		{
+			"char": "南",
+			"romaji": "minami\nsouth"
+		},
+		{
+			"char": "千",
+			"romaji": "sen\nthousand"
+		},
+		{
+			"char": "西",
+			"romaji": "nishi\nwest"
+		},
+		{
+			"char": "毎",
+			"romaji": "mai\nevery"
+		},
+		{
+			"char": "休",
+			"romaji": "yasumu\nrest"
+		},
+		{
+			"char": "八",
+			"romaji": "hachi\neight"
+		},
+		{
+			"char": "読",
+			"romaji": "yomu\nread"
+		},
+		{
+			"char": "五",
+			"romaji": "go\nfive"
+		},
+		{
+			"char": "四",
+			"romaji": "yon\nfour"
+		},
+		{
+			"char": "百",
+			"romaji": "hyaku\nhundred"
+		},
+		{
+			"char": "円",
+			"romaji": "en\ncircle"
+		},
+		{
+			"char": "午",
+			"romaji": "go\nnoon"
+		},
+		{
+			"char": "七",
+			"romaji": "nana\nseven"
+		},
+		{
+			"char": "左",
+			"romaji": "hidari\nleft"
+		},
+		{
+			"char": "右",
+			"romaji": "migi\nright"
+		},
+		{
+			"char": "雨",
+			"romaji": "ame\nrain"
+		},
+		{
+			"char": "六",
+			"romaji": "roku\nsix"
+		},
+		{
+			"char": "九",
+			"romaji": "kyuu\nnine"
+		}
 	]
 }
