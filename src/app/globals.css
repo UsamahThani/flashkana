@@ -3,13 +3,14 @@
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
+	--font-english: var(--font-inter);
+	--font-japanese: var(--font-noto-jp);
 }
 
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
+	--font-sans: var(--font-english);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,7 +29,11 @@
 body {
 	background: var(--background);
 	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-english), Arial, Helvetica, sans-serif;
+}
+
+.japanese-text {
+	font-family: var(--font-japanese), "Noto Sans JP", "Kosugi Maru", sans-serif;
 }
 
 .perspective {

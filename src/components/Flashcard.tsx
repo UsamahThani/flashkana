@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import confetti from "canvas-confetti";
+import SettingsMenu from "./SettingsMenu";
 
 type Card = { char: string; romaji: string };
 
@@ -15,20 +16,31 @@ function shuffleArray<T>(array: T[]): T[] {
 export default function Flashcard({ cards }: { cards: Card[] }) {
 	const [index, setIndex] = useState(0);
 	const [showAnswer, setShowAnswer] = useState(false);
-	const [isRandom, setIsRandom] = useState(false);
 	const [shuffleCards, setShuffleCards] = useState<Card[]>(cards);
 	const [finished, setFinished] = useState(false);
 	const [direction, setDirection] = useState(0);
 	const card = shuffleCards[index] ?? null;
-
 	const searchParams = useSearchParams();
 	const type = searchParams.get("type");
 	const isKanjiPractice = type?.startsWith("kanji");
-
-	const [showWriting, setShowWriting] = useState(false);
 	const [kanjiVideo, setKanjiVideo] = useState<string | null>(null);
-
 	const [showReplay, setShowReplay] = useState(false);
+	const [showSettings, setShowSettings] = useState(false);
+
+	// ✅ Initialize from localStorage immediately (avoids flash)
+	const [isRandom, setIsRandom] = useState(() => {
+		if (typeof window !== "undefined") {
+			return localStorage.getItem("isRandom") === "true";
+		}
+		return false;
+	});
+
+	const [showWriting, setShowWriting] = useState(() => {
+		if (typeof window !== "undefined") {
+			return localStorage.getItem("showWriting") === "true";
+		}
+		return false;
+	});
 
 	useEffect(() => {
 		const newOrder = isRandom ? shuffleArray(cards) : cards;
@@ -37,6 +49,12 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 		setShowAnswer(false);
 		setFinished(false);
 	}, [isRandom, cards]);
+
+	// ✅ Save to localStorage whenever options change
+	useEffect(() => {
+		localStorage.setItem("isRandom", String(isRandom));
+		localStorage.setItem("showWriting", String(showWriting));
+	}, [isRandom, showWriting]);
 
 	useEffect(() => {
 		if (index >= shuffleCards.length) {
@@ -134,33 +152,15 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 			className="w-full h-screen flex flex-col items-center justify-start p-4"
 		>
 			{/* Toggle */}
-			<div className="w-full flex justify-start items-center mb-2">
-				<label className="relative inline-block h-7 w-[48px] cursor-pointer rounded-full bg-gray-900 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-[#1976D2]">
-					<input
-						type="checkbox"
-						checked={isRandom}
-						onChange={(e) => setIsRandom(e.target.checked)}
-						className="peer sr-only"
-					/>
-					<span className="absolute inset-y-0 start-0 m-1 size-5 rounded-full bg-gray-300 ring-[5px] ring-inset ring-white transition-all peer-checked:start-7 bg-gray-900 peer-checked:w-2 peer-checked:bg-white peer-checked:ring-transparent"></span>
-				</label>
-				<span className="text-sm ml-5">Random</span>
-			</div>
-
-			{isKanjiPractice && (
-				<div className="w-full flex justify-start items-center mb-4">
-					<label className="relative inline-block h-7 w-[48px] cursor-pointer rounded-full bg-gray-900 transition has-[:checked]:bg-[#1976D2]">
-						<input
-							type="checkbox"
-							checked={showWriting}
-							onChange={(e) => setShowWriting(e.target.checked)}
-							className="peer sr-only"
-						/>
-						<span className="absolute inset-y-0 start-0 m-1 size-5 rounded-full bg-gray-300 ring-[5px] ring-inset ring-white transition-all peer-checked:start-7 bg-gray-900 peer-checked:w-2 peer-checked:bg-white peer-checked:ring-transparent"></span>
-					</label>
-					<span className="text-sm ml-5">Show Writing</span>
-				</div>
-			)}
+			<SettingsMenu
+				show={showSettings}
+				onClose={() => setShowSettings((prev) => !prev)}
+				isRandom={isRandom}
+				setIsRandom={setIsRandom}
+				showWriting={showWriting}
+				setShowWriting={setShowWriting}
+				isKanjiPractice={Boolean(isKanjiPractice)}
+			/>
 
 			{/* Flashcard */}
 			<div className="w-full flex items-center justify-center h-3/4">
@@ -227,7 +227,7 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 											)}
 										</div>
 									) : (
-										card.char
+										<div className="text-9xl japanese-text ">{card.char}</div>
 									)}
 								</div>
 
@@ -247,9 +247,9 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 										<a
 											href={`https://app.kanjialive.com/${card.char}`}
 											target="_blank"
-											className="absolute bottom-0 end-2 text-xs text-gray-500"
+											className="absolute bottom-0 text-xs text-gray-500"
 										>
-											Learn more
+											Learn more about {card.char} kanji
 										</a>
 									)}
 								</div>
