@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Choice from "@/components/Choice";
 import Link from "next/link";
 
 export const metadata = {
@@ -20,31 +21,19 @@ export default function Home() {
 				className="mb-3"
 			/>
 
-			<p className="mb-6">Choose what you wanna practice:</p>
-			<div className="flex flex-col gap-4 w-50">
+			{/* <Choice /> */}
+			<div className="flex gap-4 w-100 justify-center">
 				<Link
-					href="/practice?type=hiragana"
-					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+					href="/flashcards"
+					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-100"
 				>
-					Hiragana
+					Flashcards
 				</Link>
 				<Link
-					href="/practice?type=katakana"
-					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+					href="/quiz"
+					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-100"
 				>
-					Katakana
-				</Link>
-				{/* <Link
-					href="/practice?type=hiragana_practice"
-					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-				>
-					Word Practice (Hiragana)
-				</Link> */}
-				<Link
-					href="/practice?type=kanji_n5"
-					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-				>
-					Kanji (JLPT N5)
+					Quiz
 				</Link>
 			</div>
 		</main>

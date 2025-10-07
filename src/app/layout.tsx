@@ -1,6 +1,8 @@
+// app/layout.tsx  (Server Component)
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Inter } from "next/font/google";
 import "./globals.css";
+import AnimatedLayout from "./AnimatedLayout"; // ⬅️ import client wrapper
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -20,13 +22,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
-}: Readonly<{
+}: {
 	children: React.ReactNode;
-}>) {
+}) {
 	return (
 		<html lang="en">
 			<body className={`${inter.variable} ${notoJP.variable} antialiased`}>
-				{children}
+				<AnimatedLayout>{children}</AnimatedLayout>
 			</body>
 		</html>
 	);
