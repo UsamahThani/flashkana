@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Choice from "@/components/Choice";
 import Link from "next/link";
 
 export const metadata = {
@@ -21,7 +20,6 @@ export default function Home() {
 				className="mb-3"
 			/>
 
-			{/* <Choice /> */}
 			<div className="flex gap-4 w-100 justify-center">
 				<Link
 					href="/flashcards"
