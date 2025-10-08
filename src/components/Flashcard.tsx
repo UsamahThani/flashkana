@@ -177,6 +177,7 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 							className="relative w-60 h-80 rounded-2xl shadow-xl"
 							style={{
 								perspective: 1000,
+								colorScheme: "light",
 							}}
 						>
 							<motion.div
@@ -189,7 +190,7 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 							>
 								{/* Front */}
 								<div
-									className="absolute inset-0 flex items-center justify-center text-5xl text-black bg-white rounded-2xl"
+									className="absolute inset-0 flex items-center justify-center text-5xl sm:text-white sm:bg-white bg-[#e3e3e3] rounded-2xl"
 									style={{
 										backfaceVisibility: "hidden",
 									}}
@@ -233,7 +234,7 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 
 								{/* Back */}
 								<div
-									className="absolute inset-0 flex flex-col items-center justify-center text-5xl text-black bg-white rounded-2xl"
+									className="absolute inset-0 flex flex-col items-center justify-center text-5xl sm:text-white bg-blue-500 rounded-2xl"
 									style={{
 										backfaceVisibility: "hidden",
 										transform: "rotateX(180deg)",
