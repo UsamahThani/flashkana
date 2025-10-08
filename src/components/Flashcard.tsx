@@ -190,7 +190,7 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 							>
 								{/* Front */}
 								<div
-									className="absolute inset-0 flex items-center justify-center text-5xl sm:text-white sm:bg-white bg-[#e3e3e3] rounded-2xl"
+									className="absolute inset-0 flex items-center justify-center text-5xl sm:text-black sm:bg-white bg-[#e3e3e3] rounded-2xl"
 									style={{
 										backfaceVisibility: "hidden",
 									}}
