@@ -27,12 +27,23 @@ export default function Home() {
 				>
 					Flashcards
 				</Link>
-				<Link
+				{/* <Link
 					href="/quiz"
 					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-100"
 				>
 					Quiz
-				</Link>
+				</Link> */}
+				<div className="relative group inline-block">
+					<button
+						disabled
+						className="bg-gray-400 text-white font-bold py-2 px-4 rounded-full w-50 cursor-not-allowed"
+					>
+						Quiz
+					</button>
+					<span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-white text-black text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+						Coming soon
+					</span>
+				</div>
 			</div>
 		</main>
 	);
