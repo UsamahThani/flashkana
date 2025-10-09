@@ -223,7 +223,7 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 													}}
 													className="absolute bottom-4 bg-black/60 text-white px-4 py-2 rounded-full text-sm hover:bg-black/80 transition"
 												>
-													↻ Replay
+													↻
 												</button>
 											)}
 										</div>

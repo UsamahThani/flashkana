@@ -96,373 +96,133 @@
 		{ "char": "ン", "romaji": "n" }
 	],
 	"hiragana_practice": [
-		{ "char": "あめ", "romaji": "ame\nrain" },
-		{ "char": "いぬ", "romaji": "inu\ndog" },
-		{ "char": "うみ", "romaji": "umi\nsea" },
-		{ "char": "えき", "romaji": "eki\nstation" },
-		{ "char": "おちゃ", "romaji": "ocha\ntea" },
-		{ "char": "かさ", "romaji": "kasa\numbrella" },
-		{ "char": "き", "romaji": "ki\ntree" },
-		{ "char": "くるま", "romaji": "kuruma\ncar" },
-		{ "char": "けむし", "romaji": "kemushi\ncaterpillar" },
-		{ "char": "こども", "romaji": "kodomo\nchild" },
-		{ "char": "さかな", "romaji": "sakana\nfish" },
-		{ "char": "しろ", "romaji": "shiro\nwhite" },
-		{ "char": "すし", "romaji": "sushi\nsushi" },
-		{ "char": "せんせい", "romaji": "sensei\nteacher" },
-		{ "char": "そら", "romaji": "sora\nsky" },
-		{ "char": "たまご", "romaji": "tamago\negg" },
-		{ "char": "ちず", "romaji": "chizu\nmap" },
-		{ "char": "つき", "romaji": "tsuki\nmoon" },
-		{ "char": "て", "romaji": "te\nhand" },
-		{ "char": "とけい", "romaji": "tokei\nclock" },
-		{ "char": "なつ", "romaji": "natsu\nsummer" },
-		{ "char": "にく", "romaji": "niku\nmeat" },
-		{ "char": "ぬの", "romaji": "nuno\ncloth" },
-		{ "char": "ねこ", "romaji": "neko\ncat" },
-		{ "char": "のり", "romaji": "nori\nseaweed" },
-		{ "char": "はな", "romaji": "hana\nflower" },
-		{ "char": "ひこうき", "romaji": "hikouki\nairplane" },
-		{ "char": "ふね", "romaji": "fune\nboat" },
-		{ "char": "へや", "romaji": "heya\nroom" },
-		{ "char": "ほし", "romaji": "hoshi\nstar" },
-		{ "char": "まど", "romaji": "mado\nwindow" },
-		{ "char": "みず", "romaji": "mizu\nwater" },
-		{ "char": "むし", "romaji": "mushi\ninsect" },
-		{ "char": "め", "romaji": "me\neye" },
-		{ "char": "もり", "romaji": "mori\nforest" },
-		{ "char": "やま", "romaji": "yama\nmountain" },
-		{ "char": "ゆき", "romaji": "yuki\nsnow" },
-		{ "char": "よる", "romaji": "yoru\nnight" },
-		{ "char": "らいねん", "romaji": "rainen\nnext year" },
-		{ "char": "りんご", "romaji": "ringo\napple" },
-		{ "char": "るす", "romaji": "rusu\nabsence" },
-		{ "char": "れいぞうこ", "romaji": "reizouko\nrefrigerator" },
-		{ "char": "ろうそく", "romaji": "rousoku\ncandle" },
-		{ "char": "わたし", "romaji": "watashi\nI, me" },
-		{ "char": "をんがく", "romaji": "wongaku\nmusic" },
-		{ "char": "ほん", "romaji": "hon\nbook" }
+		{ "char": "あめ", "romaji": "ame", "meaning": "rain" },
+		{ "char": "いぬ", "romaji": "inu", "meaning": "dog" },
+		{ "char": "うみ", "romaji": "umi", "meaning": "sea" },
+		{ "char": "えき", "romaji": "eki", "meaning": "station" },
+		{ "char": "おちゃ", "romaji": "ocha", "meaning": "tea" },
+		{ "char": "かさ", "romaji": "kasa", "meaning": "umbrella" },
+		{ "char": "き", "romaji": "ki", "meaning": "tree" },
+		{ "char": "くるま", "romaji": "kuruma", "meaning": "car" },
+		{ "char": "けむし", "romaji": "kemushi", "meaning": "caterpillar" },
+		{ "char": "こども", "romaji": "kodomo", "meaning": "child" },
+		{ "char": "さかな", "romaji": "sakana", "meaning": "fish" },
+		{ "char": "しろ", "romaji": "shiro", "meaning": "white" },
+		{ "char": "すし", "romaji": "sushi", "meaning": "sushi" },
+		{ "char": "せんせい", "romaji": "sensei", "meaning": "teacher" },
+		{ "char": "そら", "romaji": "sora", "meaning": "sky" },
+		{ "char": "たまご", "romaji": "tamago", "meaning": "egg" },
+		{ "char": "ちず", "romaji": "chizu", "meaning": "map" },
+		{ "char": "つき", "romaji": "tsuki", "meaning": "moon" },
+		{ "char": "て", "romaji": "te", "meaning": "hand" },
+		{ "char": "とけい", "romaji": "tokei", "meaning": "clock" },
+		{ "char": "なつ", "romaji": "natsu", "meaning": "summer" },
+		{ "char": "にく", "romaji": "niku", "meaning": "meat" },
+		{ "char": "ぬの", "romaji": "nuno", "meaning": "cloth" },
+		{ "char": "ねこ", "romaji": "neko", "meaning": "cat" },
+		{ "char": "のり", "romaji": "nori", "meaning": "seaweed" },
+		{ "char": "はな", "romaji": "hana", "meaning": "flower" },
+		{ "char": "ひこうき", "romaji": "hikouki", "meaning": "airplane" },
+		{ "char": "ふね", "romaji": "fune", "meaning": "boat" },
+		{ "char": "へや", "romaji": "heya", "meaning": "room" },
+		{ "char": "ほし", "romaji": "hoshi", "meaning": "star" },
+		{ "char": "まど", "romaji": "mado", "meaning": "window" },
+		{ "char": "みず", "romaji": "mizu", "meaning": "water" },
+		{ "char": "むし", "romaji": "mushi", "meaning": "insect" },
+		{ "char": "め", "romaji": "me", "meaning": "eye" },
+		{ "char": "もり", "romaji": "mori", "meaning": "forest" },
+		{ "char": "やま", "romaji": "yama", "meaning": "mountain" },
+		{ "char": "ゆき", "romaji": "yuki", "meaning": "snow" },
+		{ "char": "よる", "romaji": "yoru", "meaning": "night" },
+		{ "char": "らいねん", "romaji": "rainen", "meaning": "next year" },
+		{ "char": "りんご", "romaji": "ringo", "meaning": "apple" },
+		{ "char": "るす", "romaji": "rusu", "meaning": "absence" },
+		{ "char": "れいぞうこ", "romaji": "reizouko", "meaning": "refrigerator" },
+		{ "char": "ろうそく", "romaji": "rousoku", "meaning": "candle" },
+		{ "char": "わたし", "romaji": "watashi", "meaning": "I, me" },
+		{ "char": "をんがく", "romaji": "wongaku", "meaning": "music" },
+		{ "char": "ほん", "romaji": "hon", "meaning": "book" }
 	],
 	"kanji_n5": [
-		{
-			"char": "人",
-			"romaji": "hito\nperson"
-		},
-		{
-			"char": "大",
-			"romaji": "ō\nlarge"
-		},
-		{
-			"char": "一",
-			"romaji": "ichi\none"
-		},
-		{
-			"char": "分",
-			"romaji": "bun\npart"
-		},
-		{
-			"char": "見",
-			"romaji": "mi\nsee"
-		},
-		{
-			"char": "出",
-			"romaji": "de\nexit"
-		},
-		{
-			"char": "日",
-			"romaji": "hi\nday"
-		},
-		{
-			"char": "行",
-			"romaji": "iku\ngoing"
-		},
-		{
-			"char": "前",
-			"romaji": "mae\nin front"
-		},
-		{
-			"char": "時",
-			"romaji": "toki\ntime"
-		},
-		{
-			"char": "生",
-			"romaji": "sei\nlife"
-		},
-		{
-			"char": "本",
-			"romaji": "hon\nbook"
-		},
-		{
-			"char": "中",
-			"romaji": "naka\nin"
-		},
-		{
-			"char": "今",
-			"romaji": "ima\nnow"
-		},
-		{
-			"char": "間",
-			"romaji": "aida\ninterval"
-		},
-		{
-			"char": "年",
-			"romaji": "toshi\nyear"
-		},
-		{
-			"char": "子",
-			"romaji": "ko\nchild"
-		},
-		{
-			"char": "長",
-			"romaji": "nagai\nlong"
-		},
-		{
-			"char": "上",
-			"romaji": "ue\nabove"
-		},
-		{
-			"char": "入",
-			"romaji": "iru\nenter"
-		},
-		{
-			"char": "後",
-			"romaji": "ato\nbehind"
-		},
-		{
-			"char": "気",
-			"romaji": "ki\nspirit"
-		},
-		{
-			"char": "来",
-			"romaji": "kuru\ncome"
-		},
-		{
-			"char": "話",
-			"romaji": "hanashi\ntale"
-		},
-		{
-			"char": "女",
-			"romaji": "onna\nwoman"
-		},
-		{
-			"char": "国",
-			"romaji": "kuni\ncountry"
-		},
-		{
-			"char": "金",
-			"romaji": "kin\ngold"
-		},
-		{
-			"char": "高",
-			"romaji": "takai\ntall"
-		},
-		{
-			"char": "下",
-			"romaji": "shita\nbelow"
-		},
-		{
-			"char": "学",
-			"romaji": "gaku\nstudy"
-		},
-		{
-			"char": "先",
-			"romaji": "saki\nbefore"
-		},
-		{
-			"char": "外",
-			"romaji": "soto\noutside"
-		},
-		{
-			"char": "何",
-			"romaji": "nani\nwhat"
-		},
-		{
-			"char": "男",
-			"romaji": "otoko\nmale"
-		},
-		{
-			"char": "名",
-			"romaji": "namae\nname"
-		},
-		{
-			"char": "月",
-			"romaji": "tsuki\nmonth"
-		},
-		{
-			"char": "小",
-			"romaji": "chiisai\nlittle"
-		},
-		{
-			"char": "聞",
-			"romaji": "kiku\nhear"
-		},
-		{
-			"char": "食",
-			"romaji": "taberu\neat"
-		},
-		{
-			"char": "書",
-			"romaji": "kaku\nwrite"
-		},
-		{
-			"char": "山",
-			"romaji": "yama\nmountain"
-		},
-		{
-			"char": "電",
-			"romaji": "den\nelectricity"
-		},
-		{
-			"char": "二",
-			"romaji": "ni\ntwo"
-		},
-		{
-			"char": "車",
-			"romaji": "kuruma\ncar"
-		},
-		{
-			"char": "水",
-			"romaji": "mizu\nwater"
-		},
-		{
-			"char": "木",
-			"romaji": "ki\ntree"
-		},
-		{
-			"char": "母",
-			"romaji": "haha\nmother"
-		},
-		{
-			"char": "校",
-			"romaji": "kō\nexam"
-		},
-		{
-			"char": "父",
-			"romaji": "chichi\nfather"
-		},
-		{
-			"char": "白",
-			"romaji": "shiro\nwhite"
-		},
-		{
-			"char": "語",
-			"romaji": "go\nword"
-		},
-		{
-			"char": "十",
-			"romaji": "jū\nten"
-		},
-		{
-			"char": "万",
-			"romaji": "man\nten thousand"
-		},
-		{
-			"char": "友",
-			"romaji": "tomo\nfriend"
-		},
-		{
-			"char": "川",
-			"romaji": "kawa\nstream"
-		},
-		{
-			"char": "三",
-			"romaji": "san\nthree"
-		},
-		{
-			"char": "天",
-			"romaji": "ten\nheavens"
-		},
-		{
-			"char": "東",
-			"romaji": "higashi\neast"
-		},
-		{
-			"char": "半",
-			"romaji": "han\nhalf"
-		},
-		{
-			"char": "北",
-			"romaji": "kita\nnorth"
-		},
-		{
-			"char": "火",
-			"romaji": "hi\nfire"
-		},
-		{
-			"char": "土",
-			"romaji": "tsuchi\nsoil"
-		},
-		{
-			"char": "南",
-			"romaji": "minami\nsouth"
-		},
-		{
-			"char": "千",
-			"romaji": "sen\nthousand"
-		},
-		{
-			"char": "西",
-			"romaji": "nishi\nwest"
-		},
-		{
-			"char": "毎",
-			"romaji": "mai\nevery"
-		},
-		{
-			"char": "休",
-			"romaji": "yasumu\nrest"
-		},
-		{
-			"char": "八",
-			"romaji": "hachi\neight"
-		},
-		{
-			"char": "読",
-			"romaji": "yomu\nread"
-		},
-		{
-			"char": "五",
-			"romaji": "go\nfive"
-		},
-		{
-			"char": "四",
-			"romaji": "yon\nfour"
-		},
-		{
-			"char": "百",
-			"romaji": "hyaku\nhundred"
-		},
-		{
-			"char": "円",
-			"romaji": "en\ncircle"
-		},
-		{
-			"char": "午",
-			"romaji": "go\nnoon"
-		},
-		{
-			"char": "七",
-			"romaji": "nana\nseven"
-		},
-		{
-			"char": "左",
-			"romaji": "hidari\nleft"
-		},
-		{
-			"char": "右",
-			"romaji": "migi\nright"
-		},
-		{
-			"char": "雨",
-			"romaji": "ame\nrain"
-		},
-		{
-			"char": "六",
-			"romaji": "roku\nsix"
-		},
-		{
-			"char": "九",
-			"romaji": "kyuu\nnine"
-		}
+		{ "char": "人", "romaji": "hito", "meaning": "person" },
+		{ "char": "大", "romaji": "ō", "meaning": "large" },
+		{ "char": "一", "romaji": "ichi", "meaning": "one" },
+		{ "char": "分", "romaji": "bun", "meaning": "part" },
+		{ "char": "見", "romaji": "mi", "meaning": "see" },
+		{ "char": "出", "romaji": "de", "meaning": "exit" },
+		{ "char": "日", "romaji": "hi", "meaning": "day" },
+		{ "char": "行", "romaji": "iku", "meaning": "going" },
+		{ "char": "前", "romaji": "mae", "meaning": "in front" },
+		{ "char": "時", "romaji": "toki", "meaning": "time" },
+		{ "char": "生", "romaji": "sei", "meaning": "life" },
+		{ "char": "本", "romaji": "hon", "meaning": "book" },
+		{ "char": "中", "romaji": "naka", "meaning": "in" },
+		{ "char": "今", "romaji": "ima", "meaning": "now" },
+		{ "char": "間", "romaji": "aida", "meaning": "interval" },
+		{ "char": "年", "romaji": "toshi", "meaning": "year" },
+		{ "char": "子", "romaji": "ko", "meaning": "child" },
+		{ "char": "長", "romaji": "nagai", "meaning": "long" },
+		{ "char": "上", "romaji": "ue", "meaning": "above" },
+		{ "char": "入", "romaji": "iru", "meaning": "enter" },
+		{ "char": "後", "romaji": "ato", "meaning": "behind" },
+		{ "char": "気", "romaji": "ki", "meaning": "spirit" },
+		{ "char": "来", "romaji": "kuru", "meaning": "come" },
+		{ "char": "話", "romaji": "hanashi", "meaning": "tale" },
+		{ "char": "女", "romaji": "onna", "meaning": "woman" },
+		{ "char": "国", "romaji": "kuni", "meaning": "country" },
+		{ "char": "金", "romaji": "kin", "meaning": "gold" },
+		{ "char": "高", "romaji": "takai", "meaning": "tall" },
+		{ "char": "下", "romaji": "shita", "meaning": "below" },
+		{ "char": "学", "romaji": "gaku", "meaning": "study" },
+		{ "char": "先", "romaji": "saki", "meaning": "before" },
+		{ "char": "外", "romaji": "soto", "meaning": "outside" },
+		{ "char": "何", "romaji": "nani", "meaning": "what" },
+		{ "char": "男", "romaji": "otoko", "meaning": "male" },
+		{ "char": "名", "romaji": "namae", "meaning": "name" },
+		{ "char": "月", "romaji": "tsuki", "meaning": "month" },
+		{ "char": "小", "romaji": "chiisai", "meaning": "little" },
+		{ "char": "聞", "romaji": "kiku", "meaning": "hear" },
+		{ "char": "食", "romaji": "taberu", "meaning": "eat" },
+		{ "char": "書", "romaji": "kaku", "meaning": "write" },
+		{ "char": "山", "romaji": "yama", "meaning": "mountain" },
+		{ "char": "電", "romaji": "den", "meaning": "electricity" },
+		{ "char": "二", "romaji": "ni", "meaning": "two" },
+		{ "char": "車", "romaji": "kuruma", "meaning": "car" },
+		{ "char": "水", "romaji": "mizu", "meaning": "water" },
+		{ "char": "木", "romaji": "ki", "meaning": "tree" },
+		{ "char": "母", "romaji": "haha", "meaning": "mother" },
+		{ "char": "校", "romaji": "kō", "meaning": "exam" },
+		{ "char": "父", "romaji": "chichi", "meaning": "father" },
+		{ "char": "白", "romaji": "shiro", "meaning": "white" },
+		{ "char": "語", "romaji": "go", "meaning": "word" },
+		{ "char": "十", "romaji": "jū", "meaning": "ten" },
+		{ "char": "万", "romaji": "man", "meaning": "ten thousand" },
+		{ "char": "友", "romaji": "tomo", "meaning": "friend" },
+		{ "char": "川", "romaji": "kawa", "meaning": "stream" },
+		{ "char": "三", "romaji": "san", "meaning": "three" },
+		{ "char": "天", "romaji": "ten", "meaning": "heavens" },
+		{ "char": "東", "romaji": "higashi", "meaning": "east" },
+		{ "char": "半", "romaji": "han", "meaning": "half" },
+		{ "char": "北", "romaji": "kita", "meaning": "north" },
+		{ "char": "火", "romaji": "hi", "meaning": "fire" },
+		{ "char": "土", "romaji": "tsuchi", "meaning": "soil" },
+		{ "char": "南", "romaji": "minami", "meaning": "south" },
+		{ "char": "千", "romaji": "sen", "meaning": "thousand" },
+		{ "char": "西", "romaji": "nishi", "meaning": "west" },
+		{ "char": "毎", "romaji": "mai", "meaning": "every" },
+		{ "char": "休", "romaji": "yasumu", "meaning": "rest" },
+		{ "char": "八", "romaji": "hachi", "meaning": "eight" },
+		{ "char": "読", "romaji": "yomu", "meaning": "read" },
+		{ "char": "五", "romaji": "go", "meaning": "five" },
+		{ "char": "四", "romaji": "yon", "meaning": "four" },
+		{ "char": "百", "romaji": "hyaku", "meaning": "hundred" },
+		{ "char": "円", "romaji": "en", "meaning": "circle" },
+		{ "char": "午", "romaji": "go", "meaning": "noon" },
+		{ "char": "七", "romaji": "nana", "meaning": "seven" },
+		{ "char": "左", "romaji": "hidari", "meaning": "left" },
+		{ "char": "右", "romaji": "migi", "meaning": "right" },
+		{ "char": "雨", "romaji": "ame", "meaning": "rain" },
+		{ "char": "六", "romaji": "roku", "meaning": "six" },
+		{ "char": "九", "romaji": "kyuu", "meaning": "nine" }
 	]
 }
