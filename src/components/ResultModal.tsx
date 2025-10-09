@@ -6,6 +6,7 @@ import confetti, { CreateTypes } from "canvas-confetti";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FaRedo } from "react-icons/fa";
 
 interface ResultModalProps {
 	isOpen: boolean;
@@ -13,6 +14,7 @@ interface ResultModalProps {
 	total: number;
 	showConfetti?: boolean;
 	onClose: () => void;
+	onRetry?: () => void;
 }
 
 export default function ResultModal({
@@ -21,6 +23,7 @@ export default function ResultModal({
 	total,
 	showConfetti = false,
 	onClose,
+	onRetry,
 }: ResultModalProps) {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -53,7 +56,6 @@ export default function ResultModal({
 			clearInterval(interval);
 		}, 1500);
 
-		// Cleanup
 		return () => {
 			clearInterval(interval);
 			clearTimeout(stopTimeout);
@@ -67,7 +69,7 @@ export default function ResultModal({
 		<AnimatePresence>
 			{isOpen && (
 				<motion.div
-					className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50"
+					className="fixed inset-0 backdrop-blur-sm bg-black/40 flex items-center justify-center z-50"
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
@@ -104,7 +106,6 @@ export default function ResultModal({
 						</p>
 						<p className="text-gray-600 mb-6">Percentage: {percentage}%</p>
 
-						{/* Optional encouragement */}
 						{!passed && (
 							<p className="text-sm text-gray-700 mb-4">
 								Try again — you&apos;ll get it next time!
@@ -118,6 +119,16 @@ export default function ResultModal({
 							>
 								Close
 							</Link>
+							<button
+								onClick={() => {
+									onClose();
+									onRetry?.();
+								}}
+								className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full transition"
+							>
+								<FaRedo />
+								Retry
+							</button>
 						</div>
 					</motion.div>
 				</motion.div>
