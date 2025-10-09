@@ -107,7 +107,7 @@ export default function ResultModal({
 						{/* Optional encouragement */}
 						{!passed && (
 							<p className="text-sm text-gray-700 mb-4">
-								Try again — you'll get it next time!
+								Try again — you&apos;ll get it next time!
 							</p>
 						)}
 
