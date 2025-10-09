@@ -1,7 +1,7 @@
 "use client";
 
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 import QuizCard from "@/components/QuizCard";
 import ResultModal from "@/components/ResultModal";
 
@@ -11,7 +11,7 @@ interface KanaItem {
 	meaning?: string;
 }
 
-export default function QuestionPage() {
+function QuestionPageInner() {
 	const searchParams = useSearchParams();
 	const type = searchParams.get("type") || "all";
 
@@ -21,7 +21,6 @@ export default function QuestionPage() {
 	const [score, setScore] = useState(0);
 	const [showModal, setShowModal] = useState(false);
 
-	// Load kana data dynamically
 	useEffect(() => {
 		async function loadKana() {
 			try {
@@ -41,14 +40,14 @@ export default function QuestionPage() {
 					quizData = data[type] || [];
 				}
 
+				// Shuffle
 				function shuffle<T>(array: T[]): T[] {
-					return array.sort(() => Math.random() - 0.5);
+					return [...array].sort(() => Math.random() - 0.5);
 				}
 
 				const shuffled = shuffle(quizData);
 				setQuestions(shuffled);
 				setAnswers(Array(shuffled.length).fill(""));
-
 				setSubmitted(false);
 				setScore(0);
 			} catch (error) {
@@ -59,14 +58,12 @@ export default function QuestionPage() {
 		loadKana();
 	}, [type]);
 
-	// Handle answer change
 	const handleChange = (index: number, value: string) => {
 		const newAnswers = [...answers];
 		newAnswers[index] = value;
 		setAnswers(newAnswers);
 	};
 
-	// Handle quiz submission
 	const handleSubmit = () => {
 		if (answers.some((a) => a.trim() === "")) {
 			alert("Please answer all questions before submitting.");
@@ -135,5 +132,14 @@ export default function QuestionPage() {
 				onClose={() => setShowModal(false)}
 			/>
 		</main>
+	);
+}
+
+// ✅ Wrap the page in Suspense
+export default function QuestionPage() {
+	return (
+		<Suspense fallback={<div className="p-8 text-center">Loading quiz...</div>}>
+			<QuestionPageInner />
+		</Suspense>
 	);
 }
