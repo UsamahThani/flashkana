@@ -59,6 +59,16 @@ export default function QuestionWrapper() {
 		loadKana();
 	}, [type]);
 
+	// use effect to handle overflow hidden in mobile view
+	useEffect(() => {
+		const original = document.body.style.overflow;
+		document.body.style.overflow = "auto";
+
+		return () => {
+			document.body.style.overflow = original;
+		};
+	}, []);
+
 	const handleChange = (index: number, value: string) => {
 		const newAnswers = [...answers];
 		newAnswers[index] = value;

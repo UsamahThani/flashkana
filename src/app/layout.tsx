@@ -27,7 +27,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={`${inter.variable} ${notoJP.variable} antialiased`}>
+			<body
+				className={`${inter.variable} ${notoJP.variable} antialiased overflow-hidden sm:overflow-auto`}
+			>
 				<AnimatedLayout>{children}</AnimatedLayout>
 			</body>
 		</html>
