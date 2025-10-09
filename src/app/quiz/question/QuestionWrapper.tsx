@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import QuizCard from "@/components/QuizCard";
 import ResultModal from "@/components/ResultModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChartBar, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faChartBar } from "@fortawesome/free-solid-svg-icons";
 
 interface KanaItem {
 	char: string;
