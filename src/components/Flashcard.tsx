@@ -7,7 +7,7 @@ import { useSearchParams } from "next/navigation";
 import confetti from "canvas-confetti";
 import SettingsMenu from "./SettingsMenu";
 
-type Card = { char: string; romaji: string };
+type Card = { char: string; romaji: string; meaning: string };
 
 function shuffleArray<T>(array: T[]): T[] {
 	return [...array].sort(() => Math.random() - 0.5);
@@ -90,6 +90,40 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 		trackTouch: true,
 		trackMouse: true,
 	});
+
+	// 🎯 Keyboard controls for desktop navigation
+	useEffect(() => {
+		const handleKeyDown = (e: KeyboardEvent) => {
+			switch (e.key) {
+				case "ArrowLeft":
+					if (index > 0) {
+						setDirection(1);
+						setIndex((prev) => prev - 1);
+						setShowAnswer(false);
+					}
+					break;
+
+				case "ArrowRight":
+					if (index < cards.length - 1) {
+						setDirection(-1);
+						setIndex((prev) => prev + 1);
+						setShowAnswer(false);
+					}
+					break;
+
+				case "ArrowUp":
+				case "ArrowDown":
+					setShowAnswer((prev) => !prev);
+					break;
+
+				default:
+					break;
+			}
+		};
+
+		window.addEventListener("keydown", handleKeyDown);
+		return () => window.removeEventListener("keydown", handleKeyDown);
+	}, [index, cards.length]);
 
 	// checking if the type is kanji practice and have some additional features
 	useEffect(() => {
@@ -240,9 +274,16 @@ export default function Flashcard({ cards }: { cards: Card[] }) {
 										transform: "rotateX(180deg)",
 									}}
 								>
-									{card.romaji.split("\n").map((line, idx) => (
+									{/* {card.romaji.split("\n").map((line, idx) => (
 										<div key={idx}>{line}</div>
-									))}
+									))} */}
+
+									{card.romaji}
+									{isKanjiPractice && card.meaning && (
+										<>
+											<span className="text-xl">{card.meaning}</span>
+										</>
+									)}
 
 									{isKanjiPractice && (
 										<a
