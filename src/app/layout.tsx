@@ -30,6 +30,7 @@ export default function RootLayout({
 			<body
 				className={`${inter.variable} ${notoJP.variable} antialiased overflow-hidden sm:overflow-auto`}
 			>
+				<div className="absolute inset-0 bg-[linear-gradient(to_bottom,_black_0%,_black_10%,_hsl(220,20%,10%)_50%,_hsl(220,30%,15%)_100%)] bg-[length:200%_200%] animate-gradientMove opacity-95"></div>
 				<AnimatedLayout>{children}</AnimatedLayout>
 			</body>
 		</html>

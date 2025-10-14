@@ -6,12 +6,12 @@ export default function QuizChoice() {
 			<p className="mb-6">Choose your quiz:</p>
 
 			<div className="flex flex-col gap-4 w-50">
-				<Link
+				{/* <Link
 					href="/quiz/question?type=all"
 					className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
 				>
 					All
-				</Link>
+				</Link> */}
 				<Link
 					href="/quiz/question?type=hiragana"
 					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
