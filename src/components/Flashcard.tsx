@@ -6,8 +6,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import confetti from "canvas-confetti";
 import SettingsMenu from "./SettingsMenu";
-
-type Card = { char: string; romaji: string; meaning: string };
+import { Card } from "@/types/Cards";
 
 function shuffleArray<T>(array: T[]): T[] {
 	return [...array].sort(() => Math.random() - 0.5);

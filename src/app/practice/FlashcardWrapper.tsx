@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Flashcard from "@/components/Flashcard";
-
-type Card = { char: string; romaji: string };
+import { Card } from "@/types/Cards";
 
 export default function FlashcardWrapper() {
 	const searchParams = useSearchParams();
